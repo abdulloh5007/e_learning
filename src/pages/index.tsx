@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import style from '../styles/index.module.scss'
 import '../styles/index.module.scss'
 import Time from '@mui/icons-material/AccessTime';
@@ -169,7 +168,7 @@ export default function Home() {
                     <b>Email</b>
                     <Box sx={{ minWidth: 120 }}>
                       <FormControl>
-                        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+                        <TextField id="outlined-basic" label="Email" variant="outlined" />
                       </FormControl>
                     </Box>
                   </div>
