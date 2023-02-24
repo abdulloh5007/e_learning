@@ -3,10 +3,9 @@ import style from '../styles/index.module.scss'
 import '../styles/index.module.scss'
 import Time from '@mui/icons-material/AccessTime';
 
-import type { DatePickerProps } from 'antd';
 import { DatePicker, Space } from 'antd';
 
-const onChange: DatePickerProps['onChange'] = (date, dateString) => {
+const onChange = (date, dateString) => {
   console.log(date, dateString);
 };
 
@@ -14,7 +13,7 @@ import { Input } from 'antd';
 
 const { TextArea } = Input;
 
-const onChange2 = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+const onChange2 = (e) => {
   console.log('Change:', e.target.value);
 };
 
@@ -23,7 +22,7 @@ import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
 
 import ArrowLeft from '@mui/icons-material/KeyboardBackspace';
@@ -31,6 +30,7 @@ import Book from '@mui/icons-material/ImportContacts';
 import React from 'react';
 
 import TextField from '@mui/material/TextField';
+import Link from 'next/link';
 
 export default function Home() {
   const styleBook = {
@@ -39,8 +39,8 @@ export default function Home() {
 
   const [age, setAge] = React.useState('');
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value as string);
+  const handleChange = (event) => {
+    setAge(event.target.value);
   };
 
   return (
@@ -178,9 +178,11 @@ export default function Home() {
                   <TextArea placeholder='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur' style={{ height: 200 }} showCount onChange={onChange2} />
                 </div>
                 <div className={style.button2}>
-                  <Button variant="contained" color="success">
-                    Save Now
-                  </Button>
+                  <Link href='/courseFull'>
+                    <Button variant="contained" color="success">
+                      Save Now
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
