@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+.container{
+    max-width: 1800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.head{
+    display: flex;
+    width: 100%;
+    a{
+        text-decoration: none;
+    }
+    .button{
+        background-color: #49BBBD;
+        padding: 10px;
+        cursor: pointer;
+        color: white;
+    }
+    &__left{
+        padding: 0 40px 0 40px;
+        display: flex;
+        align-items: baseline;
+        flex-direction: column;
+        .cards{
+            h2{
+                font-weight: 600;
+                font-size: 30px;
+            }
+            &__card{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 18px;
+                border-radius: 12px;
+                margin-top: 15px;
+                width: 456px;
+                height: 63px;
+                cursor: pointer;
+                transition: 0.4s ease all;
+                &:active{
+                    transform: scale(0.96);
+                }
+                // &:hover{
+                //     transform: scale(1.03);
+                // }
+                b{
+                    margin: 0px 40px 0px 15px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: left;
+                    margin-left: 10px;
+                    font-weight: 400;
+                    font-size: 18px;
+                }
+                p{
+                    font-size: 18px;
+                    font-weight: 400;
+                    color: #252641;
+                }
+                &:nth-child(2){
+                    background: #49BBBD;
+                    b{
+                        color: white;
+                    }
+                }
+                &:nth-child(3){
+                    background: #f48c064d;
+                }
+                &:nth-child(4){
+                    background: #9dccff4d;
+                }
+                &:nth-child(5){
+                    background: rgba(238, 100, 91, 0.3);
+                }
+                &:nth-child(6){
+                    background: #49BBBD;
+                    b{
+                        color: white;
+                    }
+                }
+                &:nth-child(7){
+                    background: #f48c064d;
+                }
+                &:nth-child(8){
+                    background: #9dccff4d;
+                }
+                &:nth-child(9){
+                    background: rgba(238, 100, 91, 0.3);
+                }
+            }
+        }
+    }
+    &__right{
+        width: 70%;
+        margin-top: -30px;
+        .top{
+            background-color: #49BBBD;
+            padding: 10px 50px 0px 50px;
+            h2{
+                font-weight: 400;
+                font-size: 40px;
+                color: white;
+            }
+            div{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: -40px;
+                p{
+                    display: flex;
+                    align-items: center;
+                    color: white;
+                    font-weight: 400;
+                    font-size: 24px;
+                }
+                b{
+                    color: white;
+                    font-weight: 400;
+                    font-size: 24px;
+                }
+            }
+        }
+        .bottom{
+            border-radius: 0px;
+            z-index: 2;
+            position: relative;
+            padding: 30px;
+            &::before{
+                content: '';
+                background-color: #9DCCFF;
+                width: 100%;
+                height: 200vh;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                opacity: 0.3;
+            }
+            h2{
+                font-weight: 600;
+                font-size: 30px;
+                color: #252641;
+            }
+            p{
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 27px;
+                letter-spacing: 0.02em;
+                color: #696984;
+            }
+            .coments{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin-top: 30px;
+                &__card{
+                    display: flex;
+                    align-items: baseline;
+                    flex-direction: column;
+                    background-color: #fff;
+                    border-radius: 20px;
+                    width: 1100px;
+                    height: 300px;
+                    padding: 24px;
+                    margin-top: 24px;
+                    b{
+                        color: #696984;
+                        font-weight: 400;
+                        font-size: 18px;
+                        letter-spacing: 0.2em;
+                    }
+                    &__top{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        width: 100%;
+                        h2{
+                            color: #252641;
+                            font-weight: 600;
+                            font-size: 30px;
+                        }
+                        div{
+                            display: flex;
+                            align-items: center;
+                            a{
+                                text-decoration: none;
+                                background-color: #49BBBD;
+                                color: white;
+                                padding: 8px;
+                                border-radius: 50%;
+                                display: flex;
+                                align-items: center;
+                                margin-left: 30px;
+                            }
+                        }
+                    }
+                    b{
+                        font-weight: 400;
+                        font-size: 18px;
+                        line-height: 27px;
+                        letter-spacing: 0.02em;
+                        color: #696984;
+                        margin-left: 0;
+                    }
+                    &__bottom{
+                        display: flex;
+                        align-items: center;
+                        padding: 20px;
+                        width: 1050px;
+                        height: 120px;
+                        border-radius: 12px;
+                        position: relative;
+                        z-index: 1;
+                        margin-top: 20px;
+                        &:nth-child(3){
+                            background-color: #F48C06 !important;
+                        }
+                        &:nth-child(2){
+                            background-color: #EE645B !important;
+                        }
+                        &::before{
+                            content: "";
+                            background-color: #9DCCFF;
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            opacity: 0.2;
+                            z-index: -2;
+                        }
+                        p{
+                            font-weight: 400;
+                            font-size: 18px;
+                            line-height: 27px;
+                            letter-spacing: 0.02em;
+                            color: #696984;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// ::-webkit-scrollbar {
+//     width: 3px;
+// }
+// ::-webkit-scrollbar-track {
+//     background: red;
+// }                
+// ::-webkit-scrollbar-thumb {
+//     background: #888;
+// }                
+// ::-webkit-scrollbar-thumb:hover {
+//     background: #555; 
+// }

@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+    h2::selection{
+        color: #49BBBD;
+        background-color: white;
+        padding: 4px;
+    }
+    p::selection{
+        color: #49BBBD;
+        background-color: white;
+        padding: 4px;
+    }
+    b::selection{
+        color: #49BBBD;
+        background-color: white;
+        padding: 4px;
+    }
+}

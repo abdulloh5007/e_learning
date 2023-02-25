@@ -2,82 +2,24 @@ import ArrowLeft from '@mui/icons-material/KeyboardBackspace';
 import Book from '@mui/icons-material/ImportContacts';
 import React from 'react';
 
+// icons
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TelegramIcon from '@mui/icons-material/Telegram';
+import InstagramIcon from '@mui/icons-material/Instagram';
+
 import Head from 'next/head'
-import style from '../styles/calendar.module.scss'
+import style from '../styles/calendarTwo.module.scss'
 import Time from '@mui/icons-material/AccessTime';
 
-import { useState } from 'react';
-import { Calendar } from 'antd';
-
-const localeEnd = []
-
-export default function calendar() {
-    const [date, setDate] = useState(new Date());
-    const today = new Date().toLocaleDateString()
-    
-    {
-        // const day = new Date().getDay()
-        // const getDay = new Date().getDate()
-        // const months = new Date().getMonth()
-        // const fullYear = new Date().getFullYear()
-
-        // const weekDay = new Date(`${date.$d ? date.$d : `${months + '.' + day + '.' + fullYear}`}`).getDay()
-        // const getNameOfDay = weekDay == '1' ? 'Mon' : weekDay == '2' ? 'Tue' : weekDay == '3' ? 'Wed' : weekDay == '4' ? 'Thu' : weekDay == '5' ? 'Fri' : weekDay == '6' ? 'Sat' : weekDay == '7' ? 'Sun' : 'Error'
-
-        // const getMonths = new Date(date.$d).getMonth()
-        // const getNameOfMonths = getMonths == 0 ? '01' : getMonths == 1 ? '02' : getMonths == 2 ? '03' : getMonths == 3 ? '04' : getMonths == 4 ? '05' : getMonths == 5 ? '06' : getMonths == 6 ? '07' : getMonths == 7 ? '08' : getMonths == 8 ? '09' : getMonths == 9 ? '10' : getMonths == 10 ? '11' : getMonths == 11 || 'Dec' ? '12' : '0' + months
-
-        // const ends = today.replace(getDay, date.$D ? date.$D : getDay)
-        // const endMonth = ends.replace(getMonths, getNameOfMonths ? getNameOfMonths : months)
-        // const yearEnd = endMonth.replace(fullYear, date.$y ? date.$y : fullYear)
-    }
-    {
-        // const getDay = new Date().getDate()
-        // const getDayOfDate = new Date(date.$d).getDate()
-        // const getMonth = new Date().getMonth()
-        // const getMonthOfDate = new Date(date.$d).getMonth()
-        
-        // const d = new Date()
-        // const monthNames = ["January", "February", "March", "April", "May", "June",
-        // "July", "August", "September", "October", "November", "December"
-        // ];
-
-        // const getNameOfMonths = monthNames[d.getMonth()] == 'January' ? '01' : monthNames[d.getMonth()] == 'February' ? '02' : monthNames[d.getMonth()] == 'March' ? '03' : monthNames[d.getMonth()] == 'April' ? '04' : monthNames[d.getMonth()] == 'May' ? '05' : monthNames[d.getMonth()] == 'June' ? '06' : monthNames[d.getMonth()] == 'July' ? '07' : monthNames[d.getMonth()] == 'August' ? '08' : monthNames[d.getMonth()] == 'September' ? '09' : monthNames[d.getMonth()] == 'October' ? '10' : monthNames[d.getMonth()] == 'November' ? '11' : monthNames[d.getMonth()] == 'December' ? '12' : '0' + getMonthOfDate
-
-        // const day = today.replace(getDay, getDayOfDate ? getDayOfDate : getDay)
-        // const month = day.replace(getNameOfMonths, getNameOfMonths ? getNameOfMonths : getMonth)
-    }
-
-    const getDayF = new Date().getDate()
-    const getMonthF = new Date().getMonth()
-    const getYearF = new Date().getFullYear()
-
-    const getDay = new Date(date.$d).getDate()
-    const getMonth = new Date(date.$d).getMonth()
-    const getYear = new Date(date.$d).getFullYear()
-
-    const endDay = getDay ? getDay : getDayF
-    const endMonth = getMonth ? getMonth : getMonthF
-    const endYear = getYear ? getYear : getYearF
-
-    const all = endDay + '.' + endMonth + '.' + endYear
-
-    console.log(all);
-
-    // console.log(locale);
-    // const localizer = momentLocalizer(moment)
-
-    // const events = [
-    //     {
-    //         start: moment().toDate(),
-    //         end: moment().add(1, 'hours').toDate(),
-    //         title: 'test Event'
-    //     }
-    // ]
+function calendarTwo() {
 
     const styleBook = {
         transform: "translateX(-10px)",
     };
+
     return (
         <>
             <Head>
@@ -197,32 +139,98 @@ export default function calendar() {
                                 Lorem ipsum dolor sit amet, consectetur adi piscing elit, sed do eiusmodadipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmodeiusmodadipiscing elit, sed do eiusmodLoremLorem ipsum dolor sit amet, consectetur adi piscing elit, sed do eiusmodadipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmodeiusmodadipiscing elit, sed do eiusmodLorem
                                 eiusmodLorem dolor sit amet, consectetur adipiscing
                             </p>
-                            <div className={style.calendar}>
-                                <div className={style.calendarLeft}>
-                                    <div className={style.border} style={{ width: 500, height: 410, overflowY: 'scroll', }}>
-                                        {/* <Calendar localizer={localizer} events={events} onChange={setDate} /> */}
-                                        <Calendar onChange={(e) => setDate(e)} />
+                            <div className={style.coments}>
+                                <div className={style.coments__card}>
+                                    <div className={style.coments__card__top}>
+                                        <h2>O6 Super Coins on the way</h2>
+                                        <div>
+                                            <a href="#">
+                                                <TwitterIcon/>
+                                            </a>
+                                            <a href="#">
+                                                <FacebookIcon/>
+                                            </a>
+                                            <a href="#">
+                                                <YouTubeIcon/>
+                                            </a>
+                                            <a href="#">
+                                                <InstagramIcon/>
+                                            </a>
+                                            <a href="#">
+                                                <TelegramIcon/>
+                                            </a>
+                                            <a href="#">
+                                                <WhatsAppIcon/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <b>Lorem ipsum dolor sit amet, consectetur adi</b>
+                                    <div className={style.coments__card__bottom}>
+                                        <p>
+                                        Lorem ipsum dolor sit amet, consectetur adi piscing elit, sed do eiusmodadipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmodeiusmodadipiscing elit, sed do eiusmodL
+                                        </p>
                                     </div>
                                 </div>
-                                <div className={style.calendarRight}>
-                                    <h2>{all}</h2>
-                                    <div className={style.calendarRight__texts}>
+                                <div className={style.coments__card}>
+                                    <div className={style.coments__card__top}>
+                                        <h2>O6 Super Coins on the way</h2>
                                         <div>
-                                            <p>2 PM</p>
+                                            <a href="#">
+                                                <TwitterIcon/>
+                                            </a>
+                                            <a href="#">
+                                                <FacebookIcon/>
+                                            </a>
+                                            <a href="#">
+                                                <YouTubeIcon/>
+                                            </a>
+                                            <a href="#">
+                                                <InstagramIcon/>
+                                            </a>
+                                            <a href="#">
+                                                <TelegramIcon/>
+                                            </a>
+                                            <a href="#">
+                                                <WhatsAppIcon/>
+                                            </a>
                                         </div>
+                                    </div>
+                                    <b>Lorem ipsum dolor sit amet, consectetur adi</b>
+                                    <div className={style.coments__card__bottom}>
+                                        <p>
+                                        Lorem ipsum dolor sit amet, consectetur adi piscing elit, sed do eiusmodadipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmodeiusmodadipiscing elit, sed do eiusmodL
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className={style.coments__card}>
+                                    <div className={style.coments__card__top}>
+                                        <h2>O6 Super Coins on the way</h2>
                                         <div>
-                                            <p>3 PM</p>
-                                            <span>Adobe XD Live Class</span>
+                                            <a href="#">
+                                                <TwitterIcon/>
+                                            </a>
+                                            <a href="#">
+                                                <FacebookIcon/>
+                                            </a>
+                                            <a href="#">
+                                                <YouTubeIcon/>
+                                            </a>
+                                            <a href="#">
+                                                <InstagramIcon/>
+                                            </a>
+                                            <a href="#">
+                                                <TelegramIcon/>
+                                            </a>
+                                            <a href="#">
+                                                <WhatsAppIcon/>
+                                            </a>
                                         </div>
-                                        <div>
-                                            <p>4 PM</p>
-                                        </div>
-                                        <div>
-                                            <p>5 PM</p>
-                                        </div>
-                                        <div>
-                                            <p>6 PM</p>
-                                        </div>
+                                    </div>
+                                    <b>Lorem ipsum dolor sit amet, consectetur adi</b>
+                                    <div className={style.coments__card__bottom}>
+                                        <p>
+                                        Lorem ipsum dolor sit amet, consectetur adi piscing elit, sed do eiusmodadipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmodeiusmodadipiscing elit, sed do eiusmodL
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -231,5 +239,8 @@ export default function calendar() {
                 </div>
             </div>
         </>
-    );
+
+    )
 }
+
+export default calendarTwo
