@@ -8,13 +8,14 @@ import Time from '@mui/icons-material/AccessTime';
 
 import { useState } from 'react';
 import { Calendar } from 'antd';
+import Link from 'next/link';
 
 const localeEnd = []
 
 export default function calendar() {
     const [date, setDate] = useState(new Date());
     const today = new Date().toLocaleDateString()
-    
+
     {
         // const day = new Date().getDay()
         // const getDay = new Date().getDate()
@@ -36,7 +37,7 @@ export default function calendar() {
         // const getDayOfDate = new Date(date.$d).getDate()
         // const getMonth = new Date().getMonth()
         // const getMonthOfDate = new Date(date.$d).getMonth()
-        
+
         // const d = new Date()
         // const monthNames = ["January", "February", "March", "April", "May", "June",
         // "July", "August", "September", "October", "November", "December"
@@ -89,16 +90,15 @@ export default function calendar() {
             <div className={style.container}>
                 <div className={style.head}>
                     <div className={style.head__left}>
-                        <ArrowLeft className={style.button} />
+                        <Link href='/courseFull' className={style.button}><ArrowLeft /></Link>
                         <div className={style.cards}>
                             <h2>Change Simplification</h2>
-                            <div className={style.cards__card}>
-                                <b>
-                                    <Book style={styleBook} />
-                                    Lesson 01 : Introduction about XD
-                                </b>
+                            <Link href='/calendarTwo'>
+                                <div className={style.cards__card}>
+                                <b><Book style={styleBook} />Lesson 01 : Introduction about XD</b>
                                 <p>30 mins</p>
-                            </div>
+                                </div>
+                            </Link>
                             <div className={style.cards__card}>
                                 <b>
                                     <Book style={styleBook} />

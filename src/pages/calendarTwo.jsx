@@ -1,6 +1,7 @@
 import ArrowLeft from '@mui/icons-material/KeyboardBackspace';
 import Book from '@mui/icons-material/ImportContacts';
-import React from 'react';
+import React, { useState } from 'react';
+import Link from 'next/link'
 
 // icons
 import YouTubeIcon from '@mui/icons-material/YouTube';
@@ -15,10 +16,18 @@ import style from '../styles/calendarTwo.module.scss'
 import Time from '@mui/icons-material/AccessTime';
 
 function calendarTwo() {
+    const [hover, setHover] = useState([])
+    const arr = hover.value1
+
+    console.log(arr);
 
     const styleBook = {
         transform: "translateX(-10px)",
     };
+
+    const styleComent = {
+        height: hover.value2 == true ? '300px' : '100px'
+    }
 
     return (
         <>
@@ -31,7 +40,7 @@ function calendarTwo() {
             <div className={style.container}>
                 <div className={style.head}>
                     <div className={style.head__left}>
-                        <ArrowLeft className={style.button} />
+                        <Link href='/calendar' className={style.button}><ArrowLeft /></Link>
                         <div className={style.cards}>
                             <h2>Change Simplification</h2>
                             <div className={style.cards__card}>
@@ -140,7 +149,7 @@ function calendarTwo() {
                                 eiusmodLorem dolor sit amet, consectetur adipiscing
                             </p>
                             <div className={style.coments}>
-                                <div className={style.coments__card}>
+                                <div style={styleComent} className={style.coments__card}>
                                     <div className={style.coments__card__top}>
                                         <h2>O6 Super Coins on the way</h2>
                                         <div>
@@ -164,14 +173,19 @@ function calendarTwo() {
                                             </a>
                                         </div>
                                     </div>
-                                    <b>Lorem ipsum dolor sit amet, consectetur adi</b>
+                                    <div className={style.coments__card__center}>
+                                        <b>Lorem ipsum dolor sit amet, consectetur adi</b>
+                                        <b hidden={hover.value1 == true} onClick={() => setHover({
+                                            value1: true
+                                        })}>See More</b>
+                                    </div>
                                     <div className={style.coments__card__bottom}>
                                         <p>
                                         Lorem ipsum dolor sit amet, consectetur adi piscing elit, sed do eiusmodadipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmodeiusmodadipiscing elit, sed do eiusmodL
                                         </p>
                                     </div>
                                 </div>
-                                <div className={style.coments__card}>
+                                <div style={styleComent} className={style.coments__card}>
                                     <div className={style.coments__card__top}>
                                         <h2>O6 Super Coins on the way</h2>
                                         <div>
@@ -195,14 +209,19 @@ function calendarTwo() {
                                             </a>
                                         </div>
                                     </div>
-                                    <b>Lorem ipsum dolor sit amet, consectetur adi</b>
+                                    <div className={style.coments__card__center}>
+                                        <b>Lorem ipsum dolor sit amet, consectetur adi</b>
+                                        <b hidden={hover.value2 == true} onClick={() => setHover({
+                                            valu2: true
+                                        })}>See More</b>
+                                    </div>
                                     <div className={style.coments__card__bottom}>
                                         <p>
                                         Lorem ipsum dolor sit amet, consectetur adi piscing elit, sed do eiusmodadipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmodeiusmodadipiscing elit, sed do eiusmodL
                                         </p>
                                     </div>
                                 </div>
-                                <div className={style.coments__card}>
+                                <div style={styleComent} className={style.coments__card}>
                                     <div className={style.coments__card__top}>
                                         <h2>O6 Super Coins on the way</h2>
                                         <div>
@@ -226,7 +245,12 @@ function calendarTwo() {
                                             </a>
                                         </div>
                                     </div>
-                                    <b>Lorem ipsum dolor sit amet, consectetur adi</b>
+                                    <div className={style.coments__card__center}>
+                                        <b>Lorem ipsum dolor sit amet, consectetur adi</b>
+                                        <b hidden={hover.value3 == true} onClick={() => setHover({
+                                            value3: true
+                                        })}>See More</b>
+                                    </div>
                                     <div className={style.coments__card__bottom}>
                                         <p>
                                         Lorem ipsum dolor sit amet, consectetur adi piscing elit, sed do eiusmodadipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmodeiusmodadipiscing elit, sed do eiusmodL

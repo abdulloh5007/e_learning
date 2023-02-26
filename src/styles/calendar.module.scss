@@ -23,6 +23,13 @@
         align-items: baseline;
         flex-direction: column;
         .cards{
+            a{
+                text-decoration: none;
+                div{
+                    background-color: #49BBBD !important;
+                    color: white;
+                }
+            }
             h2{
                 font-weight: 600;
                 font-size: 30px;
