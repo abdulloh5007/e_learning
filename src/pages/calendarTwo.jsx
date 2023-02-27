@@ -1,33 +1,147 @@
 import ArrowLeft from '@mui/icons-material/KeyboardBackspace';
 import Book from '@mui/icons-material/ImportContacts';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link'
-
 // icons
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TelegramIcon from '@mui/icons-material/Telegram';
-import InstagramIcon from '@mui/icons-material/Instagram';
+import MenuIcon from '@mui/icons-material/Menu';
 
 import Head from 'next/head'
 import style from '../styles/calendarTwo.module.scss'
 import Time from '@mui/icons-material/AccessTime';
+import { coment } from '../data/data';
+import { Box, Button, Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import MailIcon from '@mui/icons-material/Mail';
 
 function calendarTwo() {
-    const [hover, setHover] = useState([])
-    const arr = hover.value1
 
-    console.log(arr);
+    const [state, setState] = React.useState({
+        left: false,
+    });
+
+    const toggleDrawer = (anchor, open) => (event) => {
+        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+            return;
+        }
+
+        setState({ ...state, [anchor]: open });
+    };
+
+    const list = (anchor) => (
+        <Box
+            
+            sx={{ maxWidth: 450 }}
+            role="presentation"
+            onClick={toggleDrawer(anchor, false)}
+            onKeyDown={toggleDrawer(anchor, false)}
+        >
+            <List>
+                <div className={style.head__leftResp}>
+                    <Link href='/calendar' className={style.button}><ArrowLeft /></Link>
+                    <div className={style.cards}>
+                        <h2>Change Simplification</h2>
+                        <div className={style.cards__card}>
+                            <b>
+                                <Book style={styleBook} />
+                                Lesson 01 : Introduction about XD
+                            </b>
+                            <p>30 mins</p>
+                        </div>
+                        <div className={style.cards__card}>
+                            <b>
+                                <Book style={styleBook} />
+                                Lesson 01 : Introduction about XD
+                            </b>
+                            <p>30 mins</p>
+                        </div>
+                        <div className={style.cards__card}>
+                            <b>
+                                <Book style={styleBook} />
+                                Lesson 01 : Introduction about XD
+                            </b>
+                            <p>30 mins</p>
+                        </div>
+                        <div className={style.cards__card}>
+                            <b>
+                                <Book style={styleBook} />
+                                Lesson 01 : Introduction about XD
+                            </b>
+                            <p>30 mins</p>
+                        </div>
+                    </div>
+                    <div className={style.cards}>
+                        <h2>PRACTICE QUIZ</h2>
+                        <div className={style.cards__card}>
+                            <b>
+                                <Book style={styleBook} />
+                                Lesson 01 : Introduction about XD
+                            </b>
+                            <p>30 mins</p>
+                        </div>
+                        <div className={style.cards__card}>
+                            <b>
+                                <Book style={styleBook} />
+                                Lesson 01 : Introduction about XD
+                            </b>
+                            <p>30 mins</p>
+                        </div>
+                        <div className={style.cards__card}>
+                            <b>
+                                <Book style={styleBook} />
+                                Lesson 01 : Introduction about XD
+                            </b>
+                            <p>30 mins</p>
+                        </div>
+                        <div className={style.cards__card}>
+                            <b>
+                                <Book style={styleBook} />
+                                Lesson 01 : Introduction about XD
+                            </b>
+                            <p>30 mins</p>
+                        </div>
+                        <div className={style.cards__card}>
+                            <b>
+                                <Book style={styleBook} />
+                                Lesson 01 : Introduction about XD
+                            </b>
+                            <p>30 mins</p>
+                        </div>
+                        <div className={style.cards__card}>
+                            <b>
+                                <Book style={styleBook} />
+                                Lesson 01 : Introduction about XD
+                            </b>
+                            <p>30 mins</p>
+                        </div>
+                        <div className={style.cards__card}>
+                            <b>
+                                <Book style={styleBook} />
+                                Lesson 01 : Introduction about XD
+                            </b>
+                            <p>30 mins</p>
+                        </div>
+                        <div className={style.cards__card}>
+                            <b>
+                                <Book style={styleBook} />
+                                Lesson 01 : Introduction about XD
+                            </b>
+                            <p>30 mins</p>
+                        </div>
+                    </div>
+                </div>
+            </List>
+            <Divider />
+        </Box>
+    );
+
+
+    // function createMarkup(icon) {
+    //     return {__html: icon}
+    // }
 
     const styleBook = {
         transform: "translateX(-10px)",
     };
-
-    const styleComent = {
-        height: hover.value2 == true ? '300px' : '100px'
-    }
 
     return (
         <>
@@ -132,6 +246,20 @@ function calendarTwo() {
                             </div>
                         </div>
                     </div>
+                    <div className={style.hamburgerMenu}>
+                        {[`Menu`].map((anchor) => (
+                            <React.Fragment key={anchor}>
+                                <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+                                <Drawer
+                                    anchor={anchor}
+                                    open={state[anchor]}
+                                    onClose={toggleDrawer(anchor, false)}
+                                >
+                                    {list(anchor)}
+                                </Drawer>
+                            </React.Fragment>
+                        ))}
+                    </div>
                     <div className={style.head__right}>
                         <div className={style.top}>
                             <h2>Learn about Adobe XD & Prototyping</h2>
@@ -149,121 +277,38 @@ function calendarTwo() {
                                 eiusmodLorem dolor sit amet, consectetur adipiscing
                             </p>
                             <div className={style.coments}>
-                                <div style={styleComent} className={style.coments__card}>
-                                    <div className={style.coments__card__top}>
-                                        <h2>O6 Super Coins on the way</h2>
-                                        <div>
-                                            <a href="#">
-                                                <TwitterIcon/>
-                                            </a>
-                                            <a href="#">
-                                                <FacebookIcon/>
-                                            </a>
-                                            <a href="#">
-                                                <YouTubeIcon/>
-                                            </a>
-                                            <a href="#">
-                                                <InstagramIcon/>
-                                            </a>
-                                            <a href="#">
-                                                <TelegramIcon/>
-                                            </a>
-                                            <a href="#">
-                                                <WhatsAppIcon/>
-                                            </a>
+                                {
+                                    coment.map((e, i) => (
+                                        <div key={i} className={style.coments__card}>
+                                            <div className={style.coments__card__top}>
+                                                <h2>{e.title}</h2>
+                                                <div>
+                                                    {
+                                                        e.icons?.map((e, i) => (
+                                                            <a key={i} href="#">
+                                                                <img src={e.icon} alt={i} />
+                                                            </a>
+                                                        ))
+                                                    }
+                                                </div>
+                                            </div>
+                                            <div className={style.coments__card__center}>
+                                                <b>{e.textTop}</b>
+                                            </div>
+                                            <div className={style.coments__card__bottom}>
+                                                <p>
+                                                    {e.text}
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className={style.coments__card__center}>
-                                        <b>Lorem ipsum dolor sit amet, consectetur adi</b>
-                                        <b hidden={hover.value1 == true} onClick={() => setHover({
-                                            value1: true
-                                        })}>See More</b>
-                                    </div>
-                                    <div className={style.coments__card__bottom}>
-                                        <p>
-                                        Lorem ipsum dolor sit amet, consectetur adi piscing elit, sed do eiusmodadipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmodeiusmodadipiscing elit, sed do eiusmodL
-                                        </p>
-                                    </div>
-                                </div>
-                                <div style={styleComent} className={style.coments__card}>
-                                    <div className={style.coments__card__top}>
-                                        <h2>O6 Super Coins on the way</h2>
-                                        <div>
-                                            <a href="#">
-                                                <TwitterIcon/>
-                                            </a>
-                                            <a href="#">
-                                                <FacebookIcon/>
-                                            </a>
-                                            <a href="#">
-                                                <YouTubeIcon/>
-                                            </a>
-                                            <a href="#">
-                                                <InstagramIcon/>
-                                            </a>
-                                            <a href="#">
-                                                <TelegramIcon/>
-                                            </a>
-                                            <a href="#">
-                                                <WhatsAppIcon/>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div className={style.coments__card__center}>
-                                        <b>Lorem ipsum dolor sit amet, consectetur adi</b>
-                                        <b hidden={hover.value2 == true} onClick={() => setHover({
-                                            valu2: true
-                                        })}>See More</b>
-                                    </div>
-                                    <div className={style.coments__card__bottom}>
-                                        <p>
-                                        Lorem ipsum dolor sit amet, consectetur adi piscing elit, sed do eiusmodadipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmodeiusmodadipiscing elit, sed do eiusmodL
-                                        </p>
-                                    </div>
-                                </div>
-                                <div style={styleComent} className={style.coments__card}>
-                                    <div className={style.coments__card__top}>
-                                        <h2>O6 Super Coins on the way</h2>
-                                        <div>
-                                            <a href="#">
-                                                <TwitterIcon/>
-                                            </a>
-                                            <a href="#">
-                                                <FacebookIcon/>
-                                            </a>
-                                            <a href="#">
-                                                <YouTubeIcon/>
-                                            </a>
-                                            <a href="#">
-                                                <InstagramIcon/>
-                                            </a>
-                                            <a href="#">
-                                                <TelegramIcon/>
-                                            </a>
-                                            <a href="#">
-                                                <WhatsAppIcon/>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div className={style.coments__card__center}>
-                                        <b>Lorem ipsum dolor sit amet, consectetur adi</b>
-                                        <b hidden={hover.value3 == true} onClick={() => setHover({
-                                            value3: true
-                                        })}>See More</b>
-                                    </div>
-                                    <div className={style.coments__card__bottom}>
-                                        <p>
-                                        Lorem ipsum dolor sit amet, consectetur adi piscing elit, sed do eiusmodadipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodadipiscing elit, sed do eiusmodeiusmodadipiscing elit, sed do eiusmodL
-                                        </p>
-                                    </div>
-                                </div>
+                                    ))
+                                }
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </>
-
     )
 }
 

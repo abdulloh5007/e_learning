@@ -45,7 +45,6 @@ export default function courseFull() {
   const [inpVal, setInpVal] = useState()
   const videoRef = useRef(null);
   const [active, setActive] = useState('1')
-  const [cardTransform, setCardTransform] = useState('1')
 
 
   pagination?.map((e) => {
@@ -71,21 +70,12 @@ export default function courseFull() {
   //   }
   //   setElemen(cardTransform)
   // }, [])
-
-    for (let i = 0; i > pages.length; i++) {
-      const element = pages[i];
-      const cardClick = {
-        transform: pages[i] == 1 ? `translateX(-430px)` : 'translateX(-430px)'
-      }
-      setCardTransform(cardClick)
-    }
-
+    
   const num = 430
-
-  // const cardTransform = {
-  //   transform: pages[1] == active ? `translateX(-${num}px)` : pages[2] == active ? `translateX(-${num * 2}px)` : pages[3] == active ? `translateX(-${num * 3}px)` : 'translateX(0px)',
-  //   transition: '2s ease all',
-  // }
+  const cardTransform = {
+    transform: pages[1] == active ? `translateX(-${num}px)` : pages[2] == active ? `translateX(-${num * 2}px)` : pages[3] == active ? `translateX(-${num * 3}px)` : 'translateX(0px)',
+    transition: '2s ease all',
+  }
 
   const cardButton1 = {
     background: active == 1 ? 'rgba(73, 187, 189, 0.5)' : '#49BBBD'
