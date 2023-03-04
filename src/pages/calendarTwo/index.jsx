@@ -6,9 +6,9 @@ import Link from 'next/link'
 import MenuIcon from '@mui/icons-material/Menu';
 
 import Head from 'next/head'
-import style from '../styles/calendarTwo.module.scss'
+import style from '../../styles/calendarTwo.module.scss'
 import Time from '@mui/icons-material/AccessTime';
-import { coment } from '../data/data';
+import { coment } from '../../data/data';
 import { Box, Button, Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
@@ -29,7 +29,7 @@ function calendarTwo() {
 
     const list = (anchor) => (
         <Box
-            
+
             sx={{ maxWidth: 450 }}
             role="presentation"
             onClick={toggleDrawer(anchor, false)}
@@ -294,6 +294,9 @@ function calendarTwo() {
                                             </div>
                                             <div className={style.coments__card__center}>
                                                 <b>{e.textTop}</b>
+                                                <Link href={`/calendarTwo/${e.id}`}>
+                                                    <span>See More</span>
+                                                </Link>
                                             </div>
                                             <div className={style.coments__card__bottom}>
                                                 <p>

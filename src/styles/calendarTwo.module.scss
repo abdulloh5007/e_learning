@@ -283,9 +283,10 @@
                     //         background-color: black;
                     //     }
                     // }
-                    &:hover {
-                        height: 300px;
-                    }
+
+                    // &:hover {
+                    //     height: 300px;
+                    // }
 
                     b {
                         color: #696984;
@@ -347,6 +348,14 @@
                             letter-spacing: 0.02em;
                             color: #696984;
                             margin-top: -10px;
+                        }
+                        span{
+                            font-size: 18px;
+                            font-weight: 400;
+                            cursor: pointer;
+                            &:hover{
+                                text-decoration: underline dashed;
+                            }
                         }
                     }
 
