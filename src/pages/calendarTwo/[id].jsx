@@ -4,8 +4,6 @@ import Head from 'next/head'
 import { useRouter } from "next/router";
 import Image from 'next/image'
 
-import cardAvatar from '../../../public/cardTop.png'
-
 export default function Comment({ comment }) {
     const router = useRouter();
     const { id } = router.query;
@@ -28,7 +26,7 @@ export default function Comment({ comment }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <div key={comment.id} className={style.card}>
-                <Image className={style.card__image} src={cardAvatar} alt='cardTop'/>
+                <img width={400} height={300} className={style.card__image} src={comment.image} alt='cardTop'/>
                 <div className={style.card__top}>
                     <h2>{comment.title}</h2>
                     <div>
